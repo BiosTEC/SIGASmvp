@@ -7,6 +7,7 @@
   --marfin: #F2F2F2;
   --cinzaClaro: #8F8E8E;
   --cinzaEscuro: #363636;
+  --borderRadius: .5rem;
 }
 
 * {
@@ -15,7 +16,14 @@
   box-sizing: border-box;
 }
 
+html {
+  /* 62.5% de 16px(tamanho de fonte dos browsers) é 10px */
+  font-size: 62.5%;
+}
+
 body {
+  /* 1.6 * 10px = 16px */
+  font-size: 1.6rem;
   background-color: var(--bg);
   color: var(--branco);
 }
@@ -23,4 +31,15 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.main {
+  width: 1536px;
+  margin: auto;
+  padding: 0 5rem 0 5rem;
+  /* top>left>bottom>right */
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
+import NavLink from './navLink/NavLink'
+import styles from './links.module.css'
 
 export default function Links() {
 
@@ -10,8 +11,8 @@ export default function Links() {
             path: '/'
         },
         {
-            title: 'Sobre',
-            path: '/sobre'
+            title: 'Quem Somos',
+            path: '/quem-somos'
         },
         {
             title: 'Contato',
@@ -22,12 +23,26 @@ export default function Links() {
             path: '/mercado'
         },
     ]
+    /* temporary */
+    const session = true
+    const isAdmin = true
 
     return (
         <>
+            {/* Mapeando o array de links em elementos */}
             {links.map((link => (
-                <li><Link href={link.path} key={link.title}>{link.title}</Link></li>
+                <li><NavLink item={link} key={link.title} /></li>
             )))}
+            {/* Blodo de condicionais para mostrar o link de admin, e trocar o link de login pelo botão de logout */}
+            {
+                session ? (
+                    <>
+                        {isAdmin && <li><NavLink item={{ title: 'Admin', path: '/admin' }} /></li>}
+                        <li><button className={styles.logout}>Logout</button></li>
+                    </>
+                ) : (
+                    <NavLink item={{ title: 'Login', path: '/Login' }} />
+                )}
         </>
     )
 }
