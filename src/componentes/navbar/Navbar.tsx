@@ -6,9 +6,9 @@ export default function Navbar() {
   return (
     <nav className={styles.container}>
       <div className={styles.logo}>LOGO</div>
-      <menu className={styles.menu}>
+      <div>
         <Links />
-      </menu>
+      </div>
     </nav>
   )
 }

@@ -26,6 +26,9 @@ body {
   font-size: 1.6rem;
   background-color: var(--bg);
   color: var(--branco);
+  background-image: url(../../public/background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
@@ -42,4 +45,41 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width:1536px) {
+  .main {
+    width: 1366px;
+  }
+}
+
+@media (max-width:1366px) {
+  .main {
+    width: 1280px;
+  }
+}
+
+@media (max-width:1280px) {
+  .main {
+    padding: 0 2rem 0 2rem;
+    width: 1024px;
+  }
+}
+
+@media (max-width:1024px) {
+  .main {
+    width: 768px;
+  }
+}
+
+@media (max-width:768px) {
+  .main {
+    width: 640px;
+  }
+}
+
+@media (max-width:640px) {
+  .main {
+    width: 475px;
+  }
 }

@@ -10,3 +10,41 @@
     background-color: var(--branco);
     color: var(--texto);
 }
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.menuButton,
+.mobileLinks {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menuButton{
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobileLinks {
+        position: absolute;
+        top: 10rem;
+        right: 0;
+        width: 50%;
+        height: calc(100svh - 10rem);
+        background-color: var(--cinzaEscuro);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+}

@@ -1,16 +1,11 @@
-.container{
-height: 10rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-.logo{
-    font-size: 30;
-    font-weight: bold;
-}
-.menu{
-    list-style: none;
+.container {
+    height: 10rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30;
+    font-weight: bold;
 }
