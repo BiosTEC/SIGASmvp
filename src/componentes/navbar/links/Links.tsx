@@ -34,13 +34,13 @@ export default function Links() {
             <menu className={styles.menu}>
                 {/* Mapeando o array de links em elementos */}
                 {links.map((link => (
-                    <li><NavLink item={link} key={link.title} /></li>
+                    <li key={link.path}><NavLink item={link} /></li>
                 )))}
                 {/* Blodo de condicionais para mostrar o link de admin, e trocar o link de login pelo botão de logout */}
                 {
                     session ? (
                         <>
-                            {isAdmin && <li><NavLink item={{ title: 'Admin', path: '/admin' }} /></li>}
+                            {isAdmin && <li key='admin'><NavLink item={{ title: 'Admin', path: '/admin' }} /></li>}
                             <li><button className={styles.logout}>Logout</button></li>
                         </>
                     ) : (
@@ -49,11 +49,11 @@ export default function Links() {
             </menu>
             <button className={styles.menuButton} onClick={() => setOpen((prev) => !prev)}>Menu</button>
             {open && (
-            <div className={styles.mobileLinks}>
-                {links.map((link) => (
-                    <NavLink item={link} key={link.title} />
-                ))}
-            </div>
+                <menu className={styles.mobileLinks}>
+                    {links.map((link) => (
+                        <li key={link.title}><NavLink item={link} /></li>
+                    ))}
+                </menu>
             )}
         </div>
     )

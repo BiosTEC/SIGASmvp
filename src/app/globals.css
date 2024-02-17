@@ -3,6 +3,7 @@
   --texto: #363636;
   --verdePrimario: #7A8C68;
   --verdeSecundario: #4B5940;
+  --amarelo: #f2b650;
   --branco: #FFFFF0;
   --marfin: #F2F2F2;
   --cinzaClaro: #8F8E8E;
@@ -23,12 +24,14 @@ html {
 
 body {
   /* 1.6 * 10px = 16px */
+  position: relative;
   font-size: 1.6rem;
   background-color: var(--bg);
   color: var(--branco);
   background-image: url(../../public/background.webp);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 a {
@@ -37,17 +40,15 @@ a {
 }
 
 .main {
-  width: 1536px;
+
   margin: auto;
-  padding: 0 5rem 0 5rem;
-  /* top>left>bottom>right */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-@media (max-width:1536px) {
+/* @media (max-width:1536px) {
   .main {
     width: 1366px;
   }
@@ -82,4 +83,4 @@ a {
   .main {
     width: 475px;
   }
-}
+} */

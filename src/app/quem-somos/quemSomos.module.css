@@ -1,0 +1,39 @@
+.section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--branco);
+    padding: 10rem 5rem 0 5rem;
+    min-height: 100svh;
+    /* top>left>bottom>right */
+    background-color: var(--marfin);
+
+
+}
+
+.textSection {
+    width: 100%;
+    max-width: 1344px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+    padding: 2rem;
+    color: var(--texto);
+}
+
+.textSection>h1 {
+    font-size: 5rem;
+    color: var(--marfin);
+}
+
+.textSection>h2 {
+    background-color: var(--marfin);
+    padding: 1rem;
+    border-radius: var(--borderRadius);
+}
+
+.textSection>p {
+    max-width: 60rem;
+}

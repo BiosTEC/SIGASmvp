@@ -11,11 +11,17 @@
     color: var(--texto);
 }
 
+.logout:hover {
+    background-color: transparent;
+    border: solid .1rem var(--amarelo);
+    color: var(--amarelo);
+}
+
 .menu {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 
@@ -29,12 +35,13 @@
         display: none;
     }
 
-    .menuButton{
+    .menuButton {
         display: block;
         cursor: pointer;
     }
 
     .mobileLinks {
+        list-style: none;
         position: absolute;
         top: 10rem;
         right: 0;
