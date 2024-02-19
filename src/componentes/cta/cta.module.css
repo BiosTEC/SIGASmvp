@@ -1,0 +1,26 @@
+.ctaPrimario,
+.ctaSecundario {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    border-radius: var(--borderRadius);
+    transition: all 250ms ease-in-out;
+    text-align: center;
+}
+
+.ctaPrimario {
+    background-color: var(--amarelo);
+    color: var(--texto);
+    border: solid .2rem var(--amarelo);
+}
+.ctaPrimario:hover{
+    background-color: var(--branco);
+    border: solid .2rem var(--branco);
+}
+.ctaSecundario{
+    border: solid .2rem var(--amarelo);
+    color: var(--amarelo);
+}
+.ctaSecundario:hover{
+    color: var(--texto);
+    background-color: var(--amarelo);
+}

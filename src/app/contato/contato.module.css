@@ -1,0 +1,10 @@
+.section {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10rem 5rem 0 5rem;
+    min-height: 100svh;
+    /* top>left>bottom>right */
+    background-color: var(--marfin);
+}

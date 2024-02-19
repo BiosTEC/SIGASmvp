@@ -1,24 +1,21 @@
 .section {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    background-color: var(--branco);
     padding: 10rem 5rem 0 5rem;
     min-height: 100svh;
     /* top>left>bottom>right */
     background-color: var(--marfin);
-
-
 }
 
 .textSection {
-    width: 100%;
-    max-width: 1344px;
+    min-width: 30rem;
+    max-width: 40rem;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 2rem;
     padding: 2rem;
     color: var(--texto);
 }
@@ -28,12 +25,25 @@
     color: var(--marfin);
 }
 
-.textSection>h2 {
+.bloco2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bloco2>h2 {
     background-color: var(--marfin);
     padding: 1rem;
     border-radius: var(--borderRadius);
 }
 
-.textSection>p {
-    max-width: 60rem;
+.imageSection {
+    position: relative;
+    width: 50%;
+    min-width: 30rem;
+}
+
+.quemSomos {
+
+    object-fit: contain;
 }

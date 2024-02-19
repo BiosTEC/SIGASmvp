@@ -1,9 +1,0 @@
-.section {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    /* top>left>bottom>right */
-    padding: 10rem 5rem 0 5rem;
-    min-height: 100svh;
-
-}

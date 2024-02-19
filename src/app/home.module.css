@@ -1,0 +1,40 @@
+.section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* top>left>bottom>right */
+    padding: 10rem 5rem 0 5rem;
+    min-height: 100svh;
+    width: 100%;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.textContainer>h3{
+    backdrop-filter: blur(5px);
+    padding: 1rem 2rem;
+    font-weight: 200;
+    border-radius: var(--borderRadius);
+}
+
+.textContainer>h1 {
+    font-size: 4rem;
+}
+
+.textContainer>p {
+    font-size: 2rem;
+    font-weight: 300;
+    max-width: 60rem;
+}
+.buttons{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}

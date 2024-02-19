@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from './heroImgHeader.module.css'
 
-export default function HeroImgHeader({ img }: { img: any }) {
+export default function HeroImgHeader({ img, alt }: { img: any, alt: string }) {
     return (
         <div className={styles.heroImage}>
             <Image
@@ -10,14 +10,10 @@ export default function HeroImgHeader({ img }: { img: any }) {
                 sizes="100vw"
                 priority
                 quality={100}
-                placeholder='blur'
-                alt='Imagem de estudantes'
+                alt={alt}
                 src={img}
-                style={{
-                    objectFit: 'cover',
-                }}
             ></Image>
-        </div>
+        </div >
 
 
     )

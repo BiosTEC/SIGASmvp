@@ -9,6 +9,7 @@
   --cinzaClaro: #8F8E8E;
   --cinzaEscuro: #363636;
   --borderRadius: .5rem;
+  /*d9d9d9*/
 }
 
 * {
@@ -40,7 +41,6 @@ a {
 }
 
 .main {
-
   margin: auto;
   min-height: 100svh;
   display: flex;

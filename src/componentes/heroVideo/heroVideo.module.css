@@ -1,0 +1,10 @@
+.video{
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: var(--verdePrimario);
+    filter: contrast(90%) brightness(80%);
+    z-index: -1;
+}
