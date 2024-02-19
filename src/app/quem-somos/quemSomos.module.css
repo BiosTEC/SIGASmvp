@@ -37,6 +37,10 @@
     border-radius: var(--borderRadius);
 }
 
+.bloco2>p {
+    padding: 1rem;
+}
+
 .imageSection {
     position: relative;
     width: 50%;

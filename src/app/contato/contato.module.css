@@ -8,3 +8,98 @@
     /* top>left>bottom>right */
     background-color: var(--marfin);
 }
+
+.textContainer {
+    width: 100%;
+    max-width: 1344px;
+    height: 100svh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.textContainer>h1 {
+    height: 50%;
+    font-size: 5rem;
+    color: var(--marfin);
+}
+
+.formContainer {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--texto);
+}
+
+.formText {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 40rem;
+}
+
+.formText>h3 {
+    font-size: 2.5rem;
+}
+
+.duvidas {
+    position: relative;
+    width: 100%;
+}
+
+.duvidas textarea {
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+    padding: 1rem 0 0 2rem;
+    color: var(--texto);
+    font-size: calc(1.5rem + .1vw);
+    border: none;
+    outline: none;
+    box-shadow: .6rem .2rem 1rem var(--sombra);
+}
+
+.duvidas textarea::placeholder {
+    opacity: 0;
+}
+
+.duvidas textarea:focus {
+    outline: none;
+    background-color: var(--marfin);
+}
+
+.duvidas label:focus-within>span,
+textarea:not(:placeholder-shown)+.span {
+    color: var(--verdeSecundario);
+    transform: translateY(-.6rem);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.span {
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    z-index: 2;
+    color: var(--texto);
+    transform: translateY(1.2rem);
+    font-size: calc(1.5rem + .1vw);
+    font-weight: 500;
+    transition-duration: 300ms;
+    pointer-events: none;
+}
+
+.duvidas:focus-within>span,
+input:not(:placeholder-shown)+.span {
+    color: var(--verdeSecundario);
+    transform: translateY(-.6rem);
+    font-size: 1.2rem;
+    font-weight: 600;
+    
+}
