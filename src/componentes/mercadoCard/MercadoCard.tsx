@@ -6,26 +6,24 @@ import Link from 'next/link'
 type mercadoCardProps = {
     img: string,
     alt: string,
-    data: string,
-    titulo: string,
-    descricao: string,
-    link: string
+    link: string,
+    post: any
 }
 
 
-export default function MercadoCard({ img, alt, data, titulo, descricao, link }: mercadoCardProps) {
+export default function MercadoCard({ img, alt, link, post }: mercadoCardProps) {
     return (
         <div className={styles.container}>
             <div className={styles.top}>
                 <div className={styles.imgContainer}>
                     <Image className={styles.img} src={img} alt={alt} fill />
                 </div>
-                <span className={styles.date}>{data}</span>
+                <span className={styles.date}>{post.date}</span>
             </div>
             <div className={styles.bottom}>
-                <h1 className={styles.title}>{titulo}</h1>
-                <p className={styles.desc}>{descricao}</p>
-                <Link className={styles.link} href={link}>leia mais</Link>
+                <h1 className={styles.title}>{post.title}</h1>
+                <p className={styles.desc}>{post.body}</p>
+                <Link className={styles.link} href={`/mercado/${post.id}`}>leia mais</Link>
             </div>
         </div>
     )
