@@ -10,6 +10,7 @@ interface ProdutoPageProps {
   };
 }
 
+
 // USANDO API PARA ACESSAR DATA
 // const getData = async (slug: string) => {
 //   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`, { cache: 'no-store' }) /* Não coloca os dados em cache  */
@@ -18,6 +19,14 @@ interface ProdutoPageProps {
 //   }
 //   return res.json()
 // }
+export const generateMetadata = async ({ params }: ProdutoPageProps) => {
+  const { slug } = params
+  const post = await getPost(slug)
+  return {
+    title: post.title,
+    description: post.desc,
+  }
+}
 
 export default async function ProdutoPage({ params }: ProdutoPageProps) {
 
@@ -30,24 +39,25 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
 
   return (
     <div className={styles.section}>
-      <div className={styles.imgContainer}>
-        <Image className={styles.img} src='/bananas.webp' alt='' fill sizes='30vw' />
-      </div>
+      {post.img && (
+        <div className={styles.imgContainer}>
+          <Image className={styles.img} src={post.img} alt='' fill sizes='30vw' />
+        </div>
+      )}
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post?.title}</h1>
         <div className={styles.detail}>
-          <Image className={styles.avatar} src='/bananas.webp' alt='' width={50} height={50} />
           {post &&
             (<Suspense fallback={<div>Loading...</div>}>
               <ProdutoUser userId={post.userId.toString()} />
             </Suspense>)}
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Anunciado em</span>
-            <span className={styles.detailValue}>02.02.2024</span>
+            <span className={styles.detailValue}>{post.createdAt.toString().slice(4, 16)}</span>
           </div>
         </div>
         <div className={styles.content}>
-          {post?.body}
+          {post.desc}
           <button className={styles.buttonComprar}>COMPRAR</button>
         </div>
       </div>

@@ -7,7 +7,10 @@ import Footer from "@/componentes/footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SIGAS",
+  title: {
+    default: 'SIGAS',
+    template: '%s | SIGAS'
+  },
   description: "Sistema Inteligente para Gerenciamento de Ativos Sustentáveis",
 };
 

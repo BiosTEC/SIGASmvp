@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import React from 'react'
 import styles from './contato.module.css'
 import HeroImgHeader from '@/componentes/heroImageHeader/HeroImgHeader'
 import Formulario from '@/componentes/form/Formulario'
 import Input from '@/componentes/form/input/Input'
 import BotaoForm from '@/componentes/form/botao/BotaoForm'
+
+export const metadata: Metadata = {
+  title: 'Contato',
+  description: 'Contato com o Sistema Inteligente para Gerenciamento de Ativos Sustentáveis',
+};
 
 export default function ContatoPage() {
   return (

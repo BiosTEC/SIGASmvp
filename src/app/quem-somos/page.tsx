@@ -2,6 +2,12 @@ import Image from 'next/image'
 import React from 'react'
 import styles from './quemSomos.module.css'
 import HeroImgHeader from '@/componentes/heroImageHeader/HeroImgHeader'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Quem Somos',
+  description: 'Sobre o Sistema Inteligente para Gerenciamento de Ativos Sustentáveis',
+};
 
 export default function QuemSomos() {
   return (

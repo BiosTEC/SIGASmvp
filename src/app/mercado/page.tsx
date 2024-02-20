@@ -18,7 +18,7 @@ interface Post {
 //   return res.json()
 // }
 
-export default async function MecadoPage() {
+export default async function MercadoPage() {
   // USANDO API PARA ACESSAR DATA
   // const posts = await getData()
 
@@ -30,9 +30,6 @@ export default async function MecadoPage() {
         <div className={styles.post} key={post.id}>
           <MercadoCard
             post={post}
-            link='/mercado/post'
-            img='/bananas.webp'
-            alt='imagem de banana'
           />
 
         </div>
