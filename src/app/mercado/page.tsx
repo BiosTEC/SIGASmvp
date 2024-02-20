@@ -1,35 +1,37 @@
 import React from 'react'
 import styles from './mercado.module.css'
 import MercadoCard from '@/componentes/mercadoCard/MercadoCard'
-import { getPosts } from '@/lib/data';
+import { getProdutos } from '@/lib/data';
 
-interface Post {
+interface Produto {
   userId: number;
   id: number;
   title: string;
   body: string;
 }
 // USANDO API PARA ACESSAR DATA
-// const getData = async () => {
-//   const res = await fetch('https://jsonplaceholder.typicode.com/posts', {next:{revalidate:1200}}) /* Atualiza e coloca os dados em cache a cada 1200s  */
-//   if (!res.ok) {
-//     throw new Error('deu ruim')
-//   }
-//   return res.json()
-// }
+const getData = async () => {
+  const res = await fetch('http://localhost:3000/api/mercado', {next:{revalidate:1200}}) /* Atualiza e coloca os dados em cache a cada 1200s  */
+  if (!res.ok) {
+    throw new Error('Erro ao buscar no banco de dados')
+  }
+  return res.json()
+}
 
 export default async function MercadoPage() {
   // USANDO API PARA ACESSAR DATA
-  // const posts = await getData()
+  const produtos = await getData()
+
+  
 
   // ACESSANDO DATA SEM API
-  const posts = await getPosts();
+  // const produtos = await getProdutos();
   return (
     <section className={styles.section}>
-      {posts.map((post: Post) => (
-        <div className={styles.post} key={post.id}>
+      {produtos.map((produto: Produto) => (
+        <div className={styles.produto} key={produto.id}>
           <MercadoCard
-            post={post}
+            produto={produto}
           />
 
         </div>

@@ -3,7 +3,7 @@ import { User } from "./models";
 import { connectToDb } from "./utils";
 import { unstable_noStore as noStore } from "next/cache";
 
-export const getPosts = async () => {
+export const getProdutos = async () => {
     try {
         connectToDb();
         const produtos = await Produto.find()
@@ -15,7 +15,7 @@ export const getPosts = async () => {
     }
 }
 
-export const getPost = async (slug: string) => {
+export const getProduto = async (slug: string) => {
     try {
         connectToDb();
         const produto = await Produto.findOne({ slug })

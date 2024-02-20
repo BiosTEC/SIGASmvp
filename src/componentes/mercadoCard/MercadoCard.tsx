@@ -4,23 +4,32 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 type mercadoCardProps = {
-    post: any
+    produto: any
 }
 
 
-export default function MercadoCard({ post }: mercadoCardProps) {
+export default function MercadoCard({ produto }: mercadoCardProps) {
+
+    //FORMATANDO DATA PARA PT-br
+    const formattedDate = produto?.createdAt
+        ? new Intl.DateTimeFormat('pt-BR', {
+            dateStyle: 'short',
+            timeStyle: 'short',
+        }).format(new Date(produto.createdAt))
+        : '';
+
     return (
         <div className={styles.container}>
             <div className={styles.top}>
-                {post.img && <div className={styles.imgContainer}>
-                    <Image className={styles.img} src={post.img} alt='' fill />
+                {produto.img && <div className={styles.imgContainer}>
+                    <Image className={styles.img} src={produto.img} alt='' fill sizes='50vw' priority />
                 </div>}
-                <span className={styles.date}>{post.createdAt.toString().slice(4, 16)}</span>
+                <span className={styles.date}>{formattedDate}</span>
             </div>
             <div className={styles.bottom}>
-                <h1 className={styles.title}>{post.title}</h1>
-                <p className={styles.desc}>{post.desc}</p>
-                <Link className={styles.link} href={`/mercado/${post.slug}`}>Saber Mais</Link>
+                <h1 className={styles.title}>{produto.title}</h1>
+                <p className={styles.desc}>{produto.desc}</p>
+                <Link className={styles.link} href={`/mercado/${produto.slug}`}>Saber Mais</Link>
             </div>
         </div>
     )

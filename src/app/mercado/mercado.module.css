@@ -17,9 +17,8 @@
 
 }
 
-.post {
+.produto {
     width: 30%;
-    border: solid .1rem var(--marfin);
     padding: 1rem;
     border-radius: var(--borderRadius);
 }

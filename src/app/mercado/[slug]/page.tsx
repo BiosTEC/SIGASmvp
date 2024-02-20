@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import styles from './produtoPage.module.css'
 import Image from 'next/image'
 import ProdutoUser from '@/componentes/produtoUser/ProdutoUser';
-import { getPost } from '@/lib/data';
+import { getProduto } from '@/lib/data';
 
 interface ProdutoPageProps {
   params: {
@@ -12,30 +12,41 @@ interface ProdutoPageProps {
 
 
 // USANDO API PARA ACESSAR DATA
-// const getData = async (slug: string) => {
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${slug}`, { cache: 'no-store' }) /* Não coloca os dados em cache  */
-//   if (!res.ok) {
-//     throw new Error('deu ruim')
-//   }
-//   return res.json()
-// }
+const getData = async (slug: string) => {
+  const res = await fetch(`http://localhost:3000/api/mercado/${slug}`, { cache: 'no-store' }) /* Não coloca os dados em cache  */
+  if (!res.ok) {
+    throw new Error('Erro ao buscar o produto')
+  }
+  return res.json()
+}
+
 export const generateMetadata = async ({ params }: ProdutoPageProps) => {
   const { slug } = params
-  const post = await getPost(slug)
+  const post = await getProduto(slug)
   return {
-    title: post.title,
-    description: post.desc,
+    title: post?.title,
+    description: post?.desc,
   }
 }
+
 
 export default async function ProdutoPage({ params }: ProdutoPageProps) {
 
   const { slug } = params
-  // USANDO API PARA ACESSAR DATA
-  // const post = await getData(slug)
 
+  // USANDO API PARA ACESSAR DATA
+  const post = await getData(slug)
+
+  //FORMATANDO DATA PARA PT-br
+  const formattedDate = post?.createdAt
+    ? new Intl.DateTimeFormat('pt-BR', {
+      dateStyle: 'short',
+      timeStyle: 'short',
+    }).format(new Date(post.createdAt))
+    : '';
+    
   // ACESSANDO DATA SEM API
-  const post = await getPost(slug)
+  // const post = await getProduto(slug)
 
   return (
     <div className={styles.section}>
@@ -45,7 +56,7 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
         </div>
       )}
       <div className={styles.textContainer}>
-        <h1 className={styles.title}>{post?.title}</h1>
+        <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.detail}>
           {post &&
             (<Suspense fallback={<div>Loading...</div>}>
@@ -53,7 +64,7 @@ export default async function ProdutoPage({ params }: ProdutoPageProps) {
             </Suspense>)}
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Anunciado em</span>
-            <span className={styles.detailValue}>{post.createdAt.toString().slice(4, 16)}</span>
+            <span className={styles.detailValue}>{formattedDate}</span>
           </div>
         </div>
         <div className={styles.content}>
