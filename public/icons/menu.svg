@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20">
+  <path d="m24,1c0-.6-.4-1-1-1H1C.4,0,0,.4,0,1v2c0,.6.4,1,1,1h22c.6,0,1-.4,1-1V1Z" fill="#fff"/>
+  <path d="m24,9c0-.6-.4-1-1-1H1c-.6,0-1,.4-1,1v2c0,.6.4,1,1,1h22c.6,0,1-.4,1-1v-2Z" fill="#fff"/>
+  <path d="m24,17c0-.6-.4-1-1-1H1c-.6,0-1,.4-1,1v2c0,.6.4,1,1,1h22c.6,0,1-.4,1-1v-2Z" fill="#fff"/>
+</svg>

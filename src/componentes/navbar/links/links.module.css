@@ -47,7 +47,8 @@
         right: 0;
         width: 50%;
         height: calc(100svh - 10rem);
-        background-color: var(--cinzaEscuro);
+        background-color: #0000006a;
+        backdrop-filter: blur(5px);
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -28,11 +28,11 @@ body {
   /* 1.6 * 10px = 16px */
   position: relative;
   font-size: 1.6rem;
-  background-color: var(--bg);
+  background-color: #343d2c;
   color: var(--branco);
-  background-image: url(../../public/background.webp);
-  background-repeat: no-repeat;
+  /* background-image: url(../../public/background.webp); */
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 

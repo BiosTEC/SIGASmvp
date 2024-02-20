@@ -14,7 +14,8 @@ export default function ContatoPage() {
         <div className={styles.formContainer}>
           <div className={styles.formText}>
             <h3>Preencha o formulário e entraremos em contato prontamente.</h3>
-            <p>Tire dúvidas, faça sugestões, comunique problemas e muito mais. Suport 24h.</p>
+            <p>Tire dúvidas, faça sugestões, comunique problemas e muito mais. Suporte 24h.</p>
+            <p>Ou mande um E-mail para: SIGAS@bios.com.br</p>
           </div>
           <Formulario>
             <Input type='text' nome='nome' placeholder='Nome' />
