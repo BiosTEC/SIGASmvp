@@ -34,8 +34,6 @@ export default function Links({ session }: LinksProps) {
 
     const [open, setOpen] = useState(false)
 
-    /* temporary */
-    const isAdmin = true
 
     return (
         <div className={styles.container}>
@@ -48,8 +46,7 @@ export default function Links({ session }: LinksProps) {
                 {
                     session?.user ? (
                         <>
-                            {/* pode ignorar esse erro */}
-                            {session.user?.isAdmin && <li key='admin'><NavLink item={{ title: 'Admin', path: '/admin' }} /></li>}
+                            {session.user && <li key='dashboard'><NavLink item={{ title: 'Dashboard', path: '/dashboard' }} /></li>}
                             <li>
                                 <form action={handleLogout}>
                                     <button className={styles.logout}>Logout</button>
