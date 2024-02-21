@@ -46,7 +46,7 @@ export default function Links({ session }: LinksProps) {
                 {
                     session?.user ? (
                         <>
-                            {session.user && <li key='dashboard'><NavLink item={{ title: 'Dashboard', path: '/dashboard' }} /></li>}
+                            {session.user && <li key='dashboard'><NavLink item={{ title: 'Dashboard', path: 'http://localhost:3000/horizon-ui-chakra-ts#/admin/default' }} /></li>}
                             <li>
                                 <form action={handleLogout}>
                                     <button className={styles.logout}>Logout</button>
