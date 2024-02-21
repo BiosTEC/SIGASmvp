@@ -14,7 +14,7 @@ export default function LoginPage() {
   return (
     <div className={styles.section}>
       <h1 className={styles.title}>ENTRAR</h1>
-      <Formulario actionHook={login}>
+      <Formulario actionHook={login} redirecionamento='/dashboard'>
         <div className={styles.inputContainer}>
           <Input type='email' nome='email' placeholder='E-Mail' />
         </div>
@@ -23,7 +23,7 @@ export default function LoginPage() {
         </div>
         <BotaoForm type='submit' texto='Entrar' />
       </Formulario>
-      <Formulario actionHook={handleGoogleLogin}>
+      <Formulario actionHook={handleGoogleLogin} redirecionamento='dashboard'>
         <button className={styles.buttonGoogle}>
           <Image src='/icons/googleIcon.svg' alt='icone do google' width={25} height={25} />
           Entrar com o Google

@@ -11,11 +11,11 @@ const login = async (credentials: any) => {
         connectToDb()
         const user = await User.findOne({ email: credentials.email })
         if (!user) {
-            throw new Error('Email não encontrado')
+            throw new Error('Dados Errados')
         }
         const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password)
         if (!isPasswordCorrect) {
-            throw new Error('Senha incorreta')
+            throw new Error('Dados Errados')
         }
         return user
     } catch (err) {

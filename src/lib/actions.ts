@@ -21,21 +21,21 @@ export const addProduto = async (formData: any) => {
     }
 
 }
-export const deleteProduto = async (formData: any) => {
-    const { id } = Object.fromEntries(formData)
+// export const deleteProduto = async (formData: any) => {
+//     const { id } = Object.fromEntries(formData)
 
-    try {
-        connectToDb()
+//     try {
+//         connectToDb()
 
-        await Produto.findByIdAndDelete(id)
-        console.log('Produto deletado do banco de dados')
-        revalidatePath('/mercado')
-    } catch (err) {
-        console.log(err)
-        return { error: 'Erro, algo de errado aconteceu.' }
-    }
+//         await Produto.findByIdAndDelete(id)
+//         console.log('Produto deletado do banco de dados')
+//         revalidatePath('/mercado')
+//     } catch (err) {
+//         console.log(err)
+//         return { error: 'Erro, algo de errado aconteceu.' }
+//     }
 
-}
+// }
 
 export const handleGoogleLogin = async () => {
     await signIn('google')
@@ -84,21 +84,18 @@ export const cadastrar = async (previousState: any, formData: any) => {
 }
 
 export const login = async (previousState: any, formData: any) => {
-
-    const { email, password }
-        = Object.fromEntries(formData);
+    const { email, password } = Object.fromEntries(formData);
     try {
         await signIn('credentials', { email, password })
+    } catch (err: any) {
+        console.log(err);
 
-    } catch (err) {
-        console.log(err)
-        return { error: 'Usuário não encontrado.' }
-
+        if (err.message.includes('credentialssignin')) {
+            return { error: 'E-mail ou senha inválidos' };
+        }
+        throw err
     }
-
 }
-
-
 export const handleExemplo = () => {
 
 }

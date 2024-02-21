@@ -25,7 +25,7 @@ export default function ContatoPage() {
             <p>Tire dúvidas, faça sugestões, comunique problemas e muito mais. Suporte 24h.</p>
             <p>Ou mande um E-mail para: SIGAS@bios.com.br</p>
           </div>
-          <Formulario action={handleExemplo}>
+          <Formulario actionHook={handleExemplo} redirecionamento='/'>
             <Input type='text' nome='nome' placeholder='Nome' />
             <Input type='email' nome='email' placeholder='E-Mail' />
             <label htmlFor="duvidas"

@@ -10,6 +10,7 @@ type FormularioProps = {
     //recebendo a função por props
     // actionHook: (formData: any) => Promise<{} | undefined> | ((formData: FormData) => void) | undefined | (() => Promise<void>) | Promise<void>
     actionHook: any
+    redirecionamento: string
 }
 
 type FormState = {
@@ -17,7 +18,7 @@ type FormState = {
     error?: string
 }
 
-export default function Formulario({ children, actionHook }: FormularioProps) {
+export default function Formulario({ children, actionHook, redirecionamento }: FormularioProps) {
 
 
     //useStateForm hook para lidar com erros
@@ -25,7 +26,7 @@ export default function Formulario({ children, actionHook }: FormularioProps) {
     const router = useRouter()
 
     useEffect(() => {
-        state?.success && router.push('login')
+        state?.success && router.push(redirecionamento)
     }, [state?.success, router])
 
     return (
