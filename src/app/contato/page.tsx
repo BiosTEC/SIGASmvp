@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Contato',
   description: 'Contato com o Sistema Inteligente para Gerenciamento de Ativos Sustentáveis',
 };
+const handleAlgumacoisa = () => {
+
+}
 
 export default function ContatoPage() {
   return (
@@ -23,7 +26,7 @@ export default function ContatoPage() {
             <p>Tire dúvidas, faça sugestões, comunique problemas e muito mais. Suporte 24h.</p>
             <p>Ou mande um E-mail para: SIGAS@bios.com.br</p>
           </div>
-          <Formulario>
+          <Formulario action={handleAlgumacoisa}>
             <Input type='text' nome='nome' placeholder='Nome' />
             <Input type='email' nome='email' placeholder='E-Mail' />
             <label htmlFor="duvidas"
