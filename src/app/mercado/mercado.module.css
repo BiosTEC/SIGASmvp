@@ -19,13 +19,14 @@
 
 .produto {
     width: 30%;
+    min-width: 32rem;
     padding: 1rem;
     border-radius: var(--borderRadius);
 }
 
 @media screen and (max-width:1280px) {
     .post {
-        width: 45%;
+        width: 55%;
     }
 }
 
