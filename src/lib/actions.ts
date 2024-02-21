@@ -37,7 +37,7 @@ export const addProduto = async (formData: any) => {
 
 // }
 
-export const handleGoogleLogin = async () => {
+export const handleGoogleLogin = async (previousState: any, formData: any) => {
     await signIn('google')
 }
 export const handleLogout = async () => {
@@ -80,7 +80,6 @@ export const cadastrar = async (previousState: any, formData: any) => {
         return { error: 'Algo não esta correto.' }
 
     }
-
 }
 
 export const login = async (previousState: any, formData: any) => {
@@ -89,7 +88,6 @@ export const login = async (previousState: any, formData: any) => {
         await signIn('credentials', { email, password })
     } catch (err: any) {
         console.log(err);
-
         if (err.message.includes('credentialssignin')) {
             return { error: 'E-mail ou senha inválidos' };
         }

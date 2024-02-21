@@ -1,9 +1,10 @@
-import NextAuth from "next-auth"
-import google from "next-auth/providers/google"
-import CredentialsProvider from "next-auth/providers/credentials"
-import { connectToDb } from "./utils";
-import { User } from "./models";
+import NextAuth from 'next-auth'
+import google from 'next-auth/providers/google'
+import CredentialsProvider from 'next-auth/providers/credentials'
+import { connectToDb } from './utils'
+import { User } from './models'
 import bcrypt from 'bcrypt'
+import { authConfig } from './auth.config'
 
 
 const login = async (credentials: any) => {
@@ -24,8 +25,13 @@ const login = async (credentials: any) => {
     }
 }
 
-export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
-
+export const {
+    handlers: { GET, POST },
+    auth,
+    signIn,
+    signOut
+} = NextAuth({
+    ...authConfig,
     providers: [
         google({
             clientId: process.env.GOOGLE_CLIENT_ID,
@@ -34,13 +40,18 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
         CredentialsProvider({
             async authorize(credentials) {
                 try {
-                    const user = await login(credentials)
-                    return user
+                    const user = await login(credentials);
+                    if (user) {
+                        return { ...user, email: credentials.email };
+                    } else {
+                        return null;
+                    }
                 } catch (err) {
-                    return null
+                    console.log(err);
+                    return null;
                 }
-            }
-        })
+            },
+        }),
     ],
     callbacks: {
         async signIn(params) {
@@ -64,6 +75,8 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
                 }
             }
             return true;
-        }
+        },
+        //necessário caso contrário os callbacks do authconfig não funcionarão
+        ...authConfig.callbacks
     }
 })
