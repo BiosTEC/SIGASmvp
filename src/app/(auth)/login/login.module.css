@@ -6,12 +6,9 @@
     max-width: 1344px;
     margin: 0 auto;
     gap: 2rem;
-    justify-content: space-evenly;
     /* top>left>bottom>right */
-    padding: 5rem 5rem 2rem 5rem;
-    margin-top: 15rem;
-    height: auto;
-    background-color: #131711;
+    padding: 15rem 5rem 2rem 5rem;
+    min-height: 100svh;
     margin-bottom: 5rem;
-    border-radius: var(--borderRadius);
+    background-color: red;
 }

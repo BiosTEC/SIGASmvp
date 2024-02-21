@@ -30,7 +30,7 @@ body {
   font-size: 1.6rem;
   background-color: #343d2c;
   color: var(--branco);
-  /* background-image: url(../../public/background.webp); */
+  background-image: url(../../public/background.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

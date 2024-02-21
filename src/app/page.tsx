@@ -12,7 +12,7 @@ export default function Home() {
         <h1>Inovação Sustentável, Energia Inteligente.</h1>
         <p>Facilitando trocas sustentáveis, o SIGAS torna o comércio de produtos agroecológicos uma experiência eficiente. Além disso, possibilita a venda descomplicada de excedentes de energia verde. Uma solução integrada para promover a sustentabilidade.</p>
       <div className={styles.buttons}>
-        <CtaPrimario texto='Comece Agora' link='/login'/>
+        <CtaPrimario texto='Comece Agora' link='/registrar'/>
         <CtaSecundario texto='Saber Mais' link='/quem-somos'/>
 
       </div>

@@ -1,6 +1,6 @@
 'use server'
 import { revalidatePath } from "next/cache"
-import { Produto } from "./models"
+import { Produto, User } from "./models"
 import { connectToDb } from "./utils"
 import { signIn, signOut } from "./auth"
 
@@ -42,6 +42,40 @@ export const handleLogout = async () => {
     await signOut()
 }
 
+export const cadastrar = async (formData: any) => {
+
+    const { username, nomeEmpreendimento, cpfCnpj, telefone, email, password, img, passwordRepeat }
+        = Object.fromEntries(formData);
+    if (password !== passwordRepeat) {
+        return 'Repita a senha corretamente'
+    }
+    try {
+        connectToDb()
+        const user = User.findOne({ username })
+        if (user) {
+            return 'Usuário já existe'
+        }
+
+
+        const newUser = new User({
+            username,
+            nomeEmpreendimento,
+            cpfCnpj,
+            telefone,
+            email,
+            password,
+            img
+        })
+        await newUser.save()
+        console.log('Usuário salvo no bando de dados')
+
+    } catch (err) {
+        console.log(err)
+        return { error: 'Algumo não esta correto.' }
+
+    }
+
+}
 
 
 
