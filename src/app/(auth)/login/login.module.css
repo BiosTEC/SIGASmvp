@@ -1,14 +1,49 @@
 .section {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1344px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
-    gap: 2rem;
-    /* top>left>bottom>right */
-    padding: 15rem 5rem 2rem 5rem;
-    min-height: 100svh;
+    color: var(--texto);
+    padding: 5rem;
+    margin-top: 20rem;
     margin-bottom: 5rem;
-    background-color: red;
+    border-radius: var(--borderRadius);
+    background-color: var(--marfin);
+}
+
+.title {
+    margin-bottom: 5rem;
+}
+
+.buttonGoogle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    border-radius: 1rem;
+    color: var(--verdeSecundario);
+    font-size: calc(1.5rem + .1vw);
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border: solid .1rem var(--verdeSecundario);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.buttonGoogle:hover {
+    background-color: var(--texto);
+    color: var(--marfin);
+}
+
+.login {
+    align-self: flex-start;
+    margin-left: 1rem;
+    text-decoration: underline;
+}
+
+.inputContainer {
+    width: 100%;
 }

@@ -3,6 +3,8 @@ import { revalidatePath } from "next/cache"
 import { Produto, User } from "./models"
 import { connectToDb } from "./utils"
 import { signIn, signOut } from "./auth"
+import bcrypt from 'bcrypt'
+
 
 export const addProduto = async (formData: any) => {
     const { title, desc, slug, userId, createdAt, img } = Object.fromEntries(formData) //desestruturizando os dados recebidos
@@ -56,6 +58,9 @@ export const cadastrar = async (formData: any) => {
             return 'Usuário já existe'
         }
 
+        //CRIPTOGRAFIA DE SENHA
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(password, salt)
 
         const newUser = new User({
             username,
@@ -63,7 +68,7 @@ export const cadastrar = async (formData: any) => {
             cpfCnpj,
             telefone,
             email,
-            password,
+            password: hashedPassword,
             img
         })
         await newUser.save()
@@ -76,8 +81,25 @@ export const cadastrar = async (formData: any) => {
     }
 
 }
+
+export const login = async (formData: any) => {
+
+    const { email, password }
+        = Object.fromEntries(formData);
+    try {
+        await signIn('credentials', { email, password })
+
+    } catch (err) {
+        console.log(err)
+        return { error: 'Algumo não esta correto.' }
+
+    }
+
+}
+
+
 export const handleExemplo = () => {
-  
-  }
+
+}
 
 
