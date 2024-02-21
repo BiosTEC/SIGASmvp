@@ -5,14 +5,13 @@ import HeroImgHeader from '@/componentes/heroImageHeader/HeroImgHeader'
 import Formulario from '@/componentes/form/Formulario'
 import Input from '@/componentes/form/input/Input'
 import BotaoForm from '@/componentes/form/botao/BotaoForm'
+import { handleExemplo } from "@/lib/actions";
 
 export const metadata: Metadata = {
   title: 'Contato',
   description: 'Contato com o Sistema Inteligente para Gerenciamento de Ativos Sustentáveis',
 };
-const handleAlgumacoisa = () => {
 
-}
 
 export default function ContatoPage() {
   return (
@@ -26,7 +25,7 @@ export default function ContatoPage() {
             <p>Tire dúvidas, faça sugestões, comunique problemas e muito mais. Suporte 24h.</p>
             <p>Ou mande um E-mail para: SIGAS@bios.com.br</p>
           </div>
-          <Formulario action={handleAlgumacoisa}>
+          <Formulario action={handleExemplo}>
             <Input type='text' nome='nome' placeholder='Nome' />
             <Input type='email' nome='email' placeholder='E-Mail' />
             <label htmlFor="duvidas"

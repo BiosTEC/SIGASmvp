@@ -76,6 +76,8 @@ export const cadastrar = async (formData: any) => {
     }
 
 }
-
+export const handleExemplo = () => {
+  
+  }
 
 
