@@ -44,18 +44,18 @@ export const handleLogout = async () => {
     await signOut()
 }
 
-export const cadastrar = async (formData: any) => {
+export const cadastrar = async (previousState: any, formData: any) => {
 
     const { username, nomeEmpreendimento, cpfCnpj, telefone, email, password, img, passwordRepeat }
         = Object.fromEntries(formData);
     if (password !== passwordRepeat) {
-        return 'Repita a senha corretamente'
+        return { error: 'Repita a senha corretamente' }
     }
     try {
         connectToDb()
         const user = await User.findOne({ username })
         if (user) {
-            return 'Usuário já existe'
+            return { error: 'Usuário já existe' }
         }
 
         //CRIPTOGRAFIA DE SENHA
@@ -73,16 +73,17 @@ export const cadastrar = async (formData: any) => {
         })
         await newUser.save()
         console.log('Usuário salvo no bando de dados')
+        return { success: true }
 
     } catch (err) {
         console.log(err)
-        return { error: 'Algumo não esta correto.' }
+        return { error: 'Algo não esta correto.' }
 
     }
 
 }
 
-export const login = async (formData: any) => {
+export const login = async (previousState: any, formData: any) => {
 
     const { email, password }
         = Object.fromEntries(formData);
@@ -91,7 +92,7 @@ export const login = async (formData: any) => {
 
     } catch (err) {
         console.log(err)
-        return { error: 'Algumo não esta correto.' }
+        return { error: 'Usuário não encontrado.' }
 
     }
 

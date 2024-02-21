@@ -12,7 +12,7 @@ export default function RegistrarPage() {
   return (
     <div className={styles.section}>
       <h1 className={styles.title}>CADASTRAR</h1>
-      <Formulario action={cadastrar}>
+      <Formulario actionHook={cadastrar}>
         <Input type='text' nome='username' placeholder='Nome' />
         <Input type='text' nome='nomeEmpreendimento' placeholder='Nome da empresa' />
         <Input type='text' nome='cpfCnpj' placeholder='CPF ou CNPJ' />
@@ -22,7 +22,7 @@ export default function RegistrarPage() {
         <Input type='password' nome='passwordRepeat' placeholder='Repetir Senha' />
         <BotaoForm type='submit' texto='Cadastrar' />
       </Formulario>
-      <Formulario action={handleGoogleLogin}>
+      <Formulario actionHook={cadastrar}>
         <button className={styles.buttonGoogle}>
           <Image src='/icons/googleIcon.svg' alt='icone do google' width={25} height={25} />
           Entrar com o Google

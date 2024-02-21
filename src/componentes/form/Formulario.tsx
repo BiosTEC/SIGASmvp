@@ -1,17 +1,37 @@
+'use client'
+import { useFormState } from "react-dom";
 import styles from './form.module.css'
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 
 type FormularioProps = {
     children: React.ReactNode,
-    action: string | ((formData: FormData) => void) | undefined
-
+    //recebendo a função por props
+    // actionHook: (formData: any) => Promise<{} | undefined> | ((formData: FormData) => void) | undefined | (() => Promise<void>) | Promise<void>
+    actionHook: any
 }
 
-export default function Formulario({ children, action }: FormularioProps) {
+type FormState = {
+    success?: boolean
+    error?: string
+}
 
+export default function Formulario({ children, actionHook }: FormularioProps) {
+
+
+    //useStateForm hook para lidar com erros
+    const [state, formAction] = useFormState<FormState | undefined>(actionHook, undefined);
+    const router = useRouter()
+
+    useEffect(() => {
+        state?.success && router.push('login')
+    }, [state?.success, router])
 
     return (
-        <form className={styles.form} action={action}>
+        <form className={styles.form} action={formAction}>
             {children}
+            {state?.error}
         </form>
     )
 }
