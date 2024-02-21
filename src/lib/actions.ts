@@ -2,6 +2,7 @@
 import { revalidatePath } from "next/cache"
 import { Produto } from "./models"
 import { connectToDb } from "./utils"
+import { signIn, signOut } from "./auth"
 
 export const addProduto = async (formData: any) => {
     const { title, desc, slug, userId, createdAt, img } = Object.fromEntries(formData) //desestruturizando os dados recebidos
@@ -33,4 +34,14 @@ export const deleteProduto = async (formData: any) => {
     }
 
 }
+
+export const handleGoogleLogin = async () => {
+    await signIn('google')
+}
+export const handleLogout = async () => {
+    await signOut()
+}
+
+
+
 

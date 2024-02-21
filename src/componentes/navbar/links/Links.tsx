@@ -3,6 +3,12 @@ import React, { useState } from 'react'
 import NavLink from './navLink/NavLink'
 import styles from './links.module.css'
 import Image from 'next/image'
+import { handleLogout } from '@/lib/actions'
+import { Session } from 'next-auth'
+
+interface LinksProps {
+    session: Session | null
+}
 
 const links = [
 
@@ -24,10 +30,11 @@ const links = [
     },
 ]
 
-export default function Links() {
+export default function Links({ session }: LinksProps) {
+
     const [open, setOpen] = useState(false)
+
     /* temporary */
-    const session = true
     const isAdmin = true
 
     return (
@@ -39,13 +46,18 @@ export default function Links() {
                 )))}
                 {/* Blodo de condicionais para mostrar o link de admin, e trocar o link de login pelo botão de logout */}
                 {
-                    session ? (
+                    session?.user ? (
                         <>
-                            {isAdmin && <li key='admin'><NavLink item={{ title: 'Admin', path: '/admin' }} /></li>}
-                            <li><button className={styles.logout}>Logout</button></li>
+                            {/* pode ignorar esse erro */}
+                            {session.user?.isAdmin && <li key='admin'><NavLink item={{ title: 'Admin', path: '/admin' }} /></li>}
+                            <li>
+                                <form action={handleLogout}>
+                                    <button className={styles.logout}>Logout</button>
+                                </form>
+                            </li>
                         </>
                     ) : (
-                        <NavLink item={{ title: 'Login', path: '/Login' }} />
+                        <NavLink item={{ title: 'Login', path: '/login' }} />
                     )}
             </menu>
             <Image className={styles.menuButton}

@@ -3,11 +3,11 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema(
     {
         username: { type: String, required: true },
-        nomeEmpreendimento: { type: String, required: true },
-        cpfCnpj: { type: String, required: true },
-        telefone: { type: String, required: true },
-        email: { type: String, required: true, unique: true },
-        password: { type: String, required: true },
+        nomeEmpreendimento: { type: String, required: false, },
+        cpfCnpj: { type: String, required: false, },
+        telefone: { type: String, required: false, },
+        email: { type: String, required: true, unique: true, },
+        password: { type: String, required: false, },
         img: { type: String, },
         isAdmin: { type: Boolean, default: true, }
     },
