@@ -51,7 +51,7 @@ export const cadastrar = async (formData: any) => {
     }
     try {
         connectToDb()
-        const user = User.findOne({ username })
+        const user = await User.findOne({ username })
         if (user) {
             return 'Usuário já existe'
         }
