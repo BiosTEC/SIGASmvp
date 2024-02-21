@@ -11,6 +11,7 @@ export const GET = async (request: Request) => {
         connectToDb()
         const produtos = await Produto.find()
         return NextResponse.json(produtos)
+
     } catch (err) {
         console.log(err)
         throw new Error('Falha ao buscar os produtos')
