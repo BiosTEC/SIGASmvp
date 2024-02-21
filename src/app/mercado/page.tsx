@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './mercado.module.css'
 import MercadoCard from '@/componentes/mercadoCard/MercadoCard'
-import { getProdutos } from '@/lib/data';
 
 interface Produto {
   userId: number;
@@ -11,7 +10,7 @@ interface Produto {
 }
 // USANDO API PARA ACESSAR DATA
 const getData = async () => {
-  const res = await fetch('http://localhost:3000/api/mercado', {next:{revalidate:1200}}) /* Atualiza e coloca os dados em cache a cada 1200s  */
+  const res = await fetch('https://sigas-mvp.vercel.app/api/mercado', {next:{revalidate:1200}}) /* Atualiza e coloca os dados em cache a cada 1200s  */
   if (!res.ok) {
     throw new Error('Erro ao buscar no banco de dados')
   }

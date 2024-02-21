@@ -13,7 +13,7 @@ interface ProdutoPageProps {
 
 // USANDO API PARA ACESSAR DATA
 const getData = async (slug: string) => {
-  const res = await fetch(`http://localhost:3000/api/mercado/${slug}`, { cache: 'no-store' }) /* Não coloca os dados em cache  */
+  const res = await fetch(`https://sigas-mvp.vercel.app/api/mercado/${slug}`, { cache: 'no-store' }) /* Não coloca os dados em cache  */
   if (!res.ok) {
     throw new Error('Erro ao buscar o produto')
   }
