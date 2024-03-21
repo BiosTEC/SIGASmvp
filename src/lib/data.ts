@@ -26,6 +26,17 @@ export const getProduto = async (slug: string) => {
         throw new Error('Error ao buscar o produto')
     }
 }
+export const getProdutosByUser = async (id: string) => {
+    try {
+        connectToDb();
+        const produtos = await Produto.findById({ id })
+        return produtos
+
+    } catch (err) {
+        console.log(err)
+        throw new Error('Error ao buscar o produto')
+    }
+}
 
 export const getUser = async (id: string) => {
     noStore();//usado para impedir o cache
@@ -44,6 +55,19 @@ export const getUsers = async () => {
         connectToDb();
         const users = await User.find()
         return users
+
+    } catch (err) {
+        console.log(err)
+        throw new Error('Error ao buscar o usuário')
+    }
+}
+export const getUserByEmail = async (email?: string) => {
+    noStore();//usado para impedir o cache
+    try {
+        connectToDb();
+        const user = await User.findOne({email: email})
+        console.log(user)
+        return user
 
     } catch (err) {
         console.log(err)

@@ -1,8 +1,11 @@
 .links{
+    display: flex;
     width: 100%;
-    height: auto;
+    height: 100%;
     font-size: 2rem;
     color: var(--branco);
+    border-radius: var(--borderRadius);
+    padding: 1rem;
 }
 .active{
     color: var(--amarelo);

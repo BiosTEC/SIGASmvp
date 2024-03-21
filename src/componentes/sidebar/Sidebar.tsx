@@ -8,7 +8,6 @@ import { useSession } from 'next-auth/react';
 export default async function Sidebar() {
 
   const { data: session } = useSession();  // get the client session
-  const name = session?.user?.name || undefined;
   const email = session?.user?.email || undefined;
 
   //buscar os dados do usuário no banco de dados

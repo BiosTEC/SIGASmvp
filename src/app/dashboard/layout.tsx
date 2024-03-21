@@ -14,7 +14,7 @@ export default function DashboardLayout({
                 <Sidebar />
             </SessionProvider>
             <div className='center'>
-                <DashboardNavbar />
+                {/* <DashboardNavbar /> */}
                 {children}
             </div>
         </main>

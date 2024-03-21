@@ -58,7 +58,7 @@ a {
   width: 100%;
   display: flex;
   position: relative;
-  padding-top: 10.5rem;
+  padding: 10.5rem 2rem 2rem 2rem;
 
 }
 .center{

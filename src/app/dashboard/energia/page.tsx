@@ -1,7 +1,8 @@
 import React from 'react'
+import styles from './energia.module.css'
 
 export default function EnergiaPage() {
   return (
-    <div>EnergiaPage</div>
+    <section className={styles.section}>EnergiaPage</section>
   )
 }
