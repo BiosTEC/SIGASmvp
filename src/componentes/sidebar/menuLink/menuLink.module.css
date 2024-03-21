@@ -1,0 +1,9 @@
+.links{
+    width: 100%;
+    height: auto;
+    font-size: 2rem;
+    color: var(--branco);
+}
+.active{
+    color: var(--amarelo);
+}

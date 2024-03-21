@@ -50,6 +50,26 @@ a {
   justify-content: space-between;
 }
 
+.mainDash {
+  background-color: var(--cinzaEscuro);
+  margin: auto;
+  min-height: 100svh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  padding-top: 10.5rem;
+
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  height: 100%;
+  width:100%;
+
+}
+
 /* @media (max-width:1536px) {
   .main {
     width: 1366px;

@@ -1,0 +1,23 @@
+.sideBar {
+    height: 100%;
+    flex: 1;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sideBar>ul {
+    list-style: none;
+}
+
+.sideBar>ul>li {
+    margin-bottom: 2rem;
+}
+.user{
+    background-color: chocolate;
+    width: 20rem;
+    height: 20rem;
+}

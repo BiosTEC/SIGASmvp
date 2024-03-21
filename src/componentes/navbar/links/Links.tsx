@@ -11,7 +11,6 @@ interface LinksProps {
 }
 
 const links = [
-
     {
         title: 'Home',
         path: '/'
