@@ -6,7 +6,7 @@ import { SessionProvider } from 'next-auth/react'
 export default function ProdutosPage() {
   return (
     <section className={styles.section}>
-      <h2>Produtos:</h2>
+      <h2>Produtos Anunciados</h2>
       <SessionProvider>
         <UserProdutos />
       </SessionProvider>

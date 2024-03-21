@@ -26,7 +26,7 @@ const getUserProdutos = async (userId: string) => {
     if (!res.ok) {
         throw new Error('Erro ao buscar no banco de dados');
     }
-    return res.json() as Promise<Produto[]>; // Define a resposta como uma Promise do tipo User
+    return res.json() as Promise<Produto[]>; // Define a resposta como uma Promise do tipo array de produtos
 };
 
 export default function UserProdutos() {
@@ -40,7 +40,6 @@ export default function UserProdutos() {
                     const userData = await getUser(session.user.email);
                     const produtoData = await getUserProdutos(userData._id);
                     setProdutos(produtoData);
-                    console.log(produtos)
                 } catch (error) {
                     console.error('Error fetching user data:', error);
                 }

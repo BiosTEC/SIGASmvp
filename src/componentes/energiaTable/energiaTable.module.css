@@ -1,0 +1,23 @@
+.energiaTable{
+    width: 100% ;
+    border-collapse: collapse;
+    border-radius: var(--borderRadius);
+    text-align: center;
+    background-color: var(--verdeSecundario);
+}
+.tableHead > th{
+    font-size: 2rem;
+    font-weight: bold;
+    border: solid .1rem white;
+    padding: .5rem;
+}
+.tableBody > tr > td{
+    font-size: 1.5rem;
+    padding: .5rem;
+    border: solid .1rem white;
+    
+}
+.tableBody >tr:hover{
+    background-color: var(--verdeSecundario);
+    color: var(--amarelo);
+}

@@ -1,9 +1,18 @@
 .section {
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
     min-height: calc(100svh - 10.5rem);
     width: 100%;
-    background-color: tomato;
+    border: solid .1rem white;
+    border-radius: var(--borderRadius);
+    padding: 2rem;
+    gap: 2rem;
+}
+.section > h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
 }
 

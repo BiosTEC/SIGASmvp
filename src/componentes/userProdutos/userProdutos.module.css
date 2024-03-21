@@ -6,10 +6,12 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
+
 }
 .produto{
-    border: solid .1rem white;
+    color: var(--texto);
     border-radius: var(--borderRadius);
+    background-color: var(--branco);
     width: 100%;
     display: flex;
     justify-content: center;
