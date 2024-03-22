@@ -3,6 +3,16 @@ import React, { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import styles from './userCharts.module.css'
 import EnergiaTable from '../energiaTable/EnergiaTable';
+import dynamic from 'next/dynamic'
+
+const ColumnChartDynamic = dynamic(() => import('./ColumnChart'), {
+    ssr: false,
+  })
+  const LineChartDynamic = dynamic(() => import('./LineChart'), {
+    ssr: false,
+  })
+  
+
 
 interface User {
     _id: string;
@@ -11,9 +21,8 @@ interface User {
 }
 type NumericArray = number[];
 
-
 const getUser = async (email: string) => {
-    const res = await fetch(`http://localhost:3000/api/user/${email}`);
+    const res = await fetch(`http://localhost:3000/api/user/${email}`, { next: { revalidate: 1200 } }) /* Atualiza e coloca os dados em cache a cada 1200s  */;
     if (!res.ok) {
         throw new Error('Erro ao buscar no banco de dados');
     }
@@ -21,7 +30,7 @@ const getUser = async (email: string) => {
 };
 
 const getUserEnergia = async (userId: string) => {
-    const res = await fetch(`http://localhost:3000/api/energia/${userId}`);
+    const res = await fetch(`http://localhost:3000/api/energia/${userId}`, { next: { revalidate: 1200 } }) /* Atualiza e coloca os dados em cache a cada 1200s  */;
     if (!res.ok) {
         throw new Error('Erro ao buscar no banco de dados');
     }
@@ -68,6 +77,10 @@ export default function UserCharts() {
     return (
         <div className={styles.userCharts}>
             <EnergiaTable geracao={geracao} consumo={consumo} excedente={excedente} />
+            <div className={styles.charts}>
+                <ColumnChartDynamic geracao={geracao} consumo={consumo} excedente={excedente} />
+                <LineChartDynamic geracao={geracao} consumo={consumo} excedente={excedente} />
+            </div>
         </div>
     );
 }

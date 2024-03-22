@@ -49,6 +49,10 @@ a {
   flex-direction: column;
   justify-content: space-between;
 }
+.apexcharts-tooltip{
+  background-color: var(--branco);
+  color: var(--texto);
+}
 
 .mainDash {
   background-color: var(--cinzaEscuro);

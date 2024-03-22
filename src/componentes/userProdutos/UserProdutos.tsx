@@ -14,7 +14,7 @@ interface Produto {
     desc: string;
 }
 const getUser = async (email: string) => {
-    const res = await fetch(`http://localhost:3000/api/user/${email}`);
+    const res = await fetch(`http://localhost:3000/api/user/${email}`, { next: { revalidate: 1200 } }) /* Atualiza e coloca os dados em cache a cada 1200s  */;
     if (!res.ok) {
         throw new Error('Erro ao buscar no banco de dados');
     }

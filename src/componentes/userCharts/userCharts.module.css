@@ -1,6 +1,27 @@
-.userCharts{
+.userCharts {
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 100%;
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.charts {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.columnChart {
+    background-color: white;
+    width: 50%;
+    padding: 1rem;
+}
+
+.lineChart {
+    background-color: white;
+    width: 50%;
     padding: 1rem;
 }
