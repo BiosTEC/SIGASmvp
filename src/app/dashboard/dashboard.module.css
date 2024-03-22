@@ -5,8 +5,14 @@
     align-items: center;
     min-height: calc(100svh - 10.5rem);
     width: 100%;
-    border: solid .1rem white;
     border-radius: var(--borderRadius);
     padding-top: 2rem;
+    background-color: var(--cinzaEscuro);
+    gap: 2rem;
 }
-
+.cards{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem;
+}

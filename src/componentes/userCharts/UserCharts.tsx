@@ -72,7 +72,7 @@ export default function UserCharts() {
             }
         }
         fetchUsuario();
-    }, [session]);
+    }, [session?.user?.email]);
 
     return (
         <div className={styles.userCharts}>
