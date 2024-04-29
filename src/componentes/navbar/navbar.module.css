@@ -14,13 +14,12 @@
 
 .logo {
     position: relative;
-    width: 8rem;
-    height: 8rem;
+    width: 15rem;
+    aspect-ratio: 2/1;
     background-color: var(--marfin);
     border-radius: var(--borderRadius);
 }
 
 .logo>img {
-    padding: .5rem;
-    object-fit: contain;
+    object-fit: cover;
 }

@@ -23,10 +23,10 @@ const links = [
         title: 'Contato',
         path: '/contato'
     },
-    {
-        title: 'Mercado',
-        path: '/mercado'
-    },
+    // {
+    //     title: 'Mercado',
+    //     path: '/mercado'
+    // },
 ]
 
 export default function Links({ session }: LinksProps) {

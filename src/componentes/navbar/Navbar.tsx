@@ -14,7 +14,7 @@ export default async function Navbar() {
   return (
     <nav className={styles.container}>
       <Link href='/' className={styles.logo}>
-        <Image src='/icons/logoSigas.svg' alt='Logo SIGAS' fill priority quality={100} />
+        <Image src='/icons/logoSigas.svg' alt='Logo SIGAE' fill priority quality={100} />
       </Link>
       <div>
         <Links session={session} />

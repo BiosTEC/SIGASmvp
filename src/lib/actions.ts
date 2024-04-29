@@ -6,38 +6,38 @@ import { signIn, signOut } from "./auth"
 import bcrypt from 'bcrypt'
 
 
-//add produto
-export const addProduto = async (formData: any) => {
-    const { title, desc, slug, userId, createdAt, img } = Object.fromEntries(formData) //desestruturizando os dados recebidos
+// //add produto
+// export const addProduto = async (formData: any) => {
+//     const { title, desc, slug, userId, createdAt, img } = Object.fromEntries(formData) //desestruturizando os dados recebidos
 
-    try {
-        connectToDb()
-        const newProduto = new Produto({ title, desc, slug, userId, createdAt, img })
-        await newProduto.save()
-        console.log('Produto salvo no banco de dados')
-        revalidatePath('/mercado')
-    } catch (err) {
-        console.log(err)
-        return { error: 'Erro, algo de errado aconteceu.' }
-    }
+//     try {
+//         connectToDb()
+//         const newProduto = new Produto({ title, desc, slug, userId, createdAt, img })
+//         await newProduto.save()
+//         console.log('Produto salvo no banco de dados')
+//         revalidatePath('/mercado')
+//     } catch (err) {
+//         console.log(err)
+//         return { error: 'Erro, algo de errado aconteceu.' }
+//     }
 
-}
+// }
 //delete produto
-export const deleteProduto = async (formData: any) => {
-    const { id } = Object.fromEntries(formData)
+// export const deleteProduto = async (formData: any) => {
+//     const { id } = Object.fromEntries(formData)
 
-    try {
-        connectToDb()
+//     try {
+//         connectToDb()
 
-        await Produto.findByIdAndDelete(id)
-        console.log('Produto deletado do banco de dados')
-        revalidatePath('/mercado')
-    } catch (err) {
-        console.log(err)
-        return { error: 'Erro, algo de errado aconteceu.' }
-    }
+//         await Produto.findByIdAndDelete(id)
+//         console.log('Produto deletado do banco de dados')
+//         revalidatePath('/mercado')
+//     } catch (err) {
+//         console.log(err)
+//         return { error: 'Erro, algo de errado aconteceu.' }
+//     }
 
-}
+// }
 
 //delete user
 export const deleteUser = async (formData: any) => {
