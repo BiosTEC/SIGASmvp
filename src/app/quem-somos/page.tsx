@@ -21,7 +21,7 @@ export default function QuemSomos() {
         </div>
       </div>
       <div className={styles.imageSection}>
-        <Image className={styles.quemSomos} src='/quem-somos.webp' alt='aplicativo sigas' fill quality={100} sizes='50vw' />
+        <Image className={styles.quemSomos} src='/quem-somos.webp' alt='aplicativo sigae' fill quality={100} sizes='50vw' />
       </div>
     </section>
   )
