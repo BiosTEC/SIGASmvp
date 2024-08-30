@@ -22,7 +22,7 @@ export default function RegistrarPage() {
         <Input type='password' nome='passwordRepeat' placeholder='Repetir Senha' />
         <BotaoForm type='submit' texto='Cadastrar' />
       </Formulario>
-      <Formulario actionHook={cadastrar} redirecionamento='dashboard'>
+      <Formulario actionHook={handleGoogleLogin} redirecionamento='dashboard'>
         <button className={styles.buttonGoogle}>
           <Image src='/icons/googleIcon.svg' alt='icone do google' width={25} height={25} />
           Entrar com o Google
