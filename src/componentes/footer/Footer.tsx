@@ -8,7 +8,7 @@ export default function Footer() {
       <div className={styles.contato}>
         <p><Link href='mailto:SIGAS@bios.com.br'>Enviar E-mail</Link></p>
         <p>81 9 9999 9999</p>
-        <p><Link href='https://www.linkedin.com/company/biostecbr/' target='_blank'>Linked In</Link></p>
+        <p><Link href='https://www.linkedin.com/company/biostecbr/' target='_blank'>linkedin.com/biostecbr/</Link></p>
       </div>
       <div className={styles.copy}>
         <p>© 2024 BIOS. Todos os direitos reservados.</p>
