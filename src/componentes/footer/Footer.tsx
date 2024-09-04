@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className={styles.container}>
       <div className={styles.contato}>
-        <p><Link href='mailto:SIGAS@bios.com.br'>Enviar E-mail</Link></p>
+        <p><Link href='mailto:contato@bios.tec.br'>Enviar E-mail</Link></p>
         <p>81 9 9999 9999</p>
         <p><Link href='https://www.linkedin.com/company/biostecbr/' target='_blank'>linkedin.com/biostecbr/</Link></p>
       </div>
