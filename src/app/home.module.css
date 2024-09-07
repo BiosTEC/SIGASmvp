@@ -30,7 +30,7 @@
 .textContainer>p {
     font-size: 2rem;
     font-weight: 300;
-    max-width: 60rem;
+    max-width: 80rem;
 }
 .buttons{
     display: flex;

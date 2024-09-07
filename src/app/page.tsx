@@ -10,7 +10,7 @@ export default function Home() {
       <div className={styles.textContainer}>
         <h3>Eficiência com Inovação</h3>
         <h1>Inovação Sustentável, Energia Inteligente.</h1>
-        <p>Facilitando trocas sustentáveis, o SIGAS torna o comércio de energia uma experiência eficiente. Além disso, possibilita a venda descomplicada de excedentes de energia verde. Uma solução integrada para promover a sustentabilidade.</p>
+        <p>O SIGAS é uma plataforma de IA para gestão integrada de ativos sustentáveis em sistemas agrovoltaicos, otimizando o desempenho fotovoltaico e agrícola. Utiliza IoT, machine learning e blockchain para monitoramento, manutenção preditiva e gestão de comercialização em tempo real.</p>
       <div className={styles.buttons}>
         <CtaPrimario texto='Comece Agora' link='/registrar'/>
         <CtaSecundario texto='Saber Mais' link='/quem-somos'/>
